@@ -23,7 +23,7 @@ def loadmat(filename):
         # 访问MAT文件中的数据
         dataset = mat_file['img4ranking']
         print("MAT file opened successfully using scipy.io.loadmat.")
-    except NotImplementedError:
+    except NotImplementedError, ValueError:
         try:
             # 尝试使用h5py打开MAT文件
             with h5py.File(filename, 'r') as f:
